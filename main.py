@@ -1,7 +1,8 @@
-from fastapi import FastAPI, Query
+# main.py
+from fastapi import FastAPI, Query, HTTPException
 from pydantic import BaseModel, EmailStr
-from pymongo import MongoClient
 from typing import Optional
+from database import initialize_db, execute_query, fetch_all
 
 # -----------------------
 # FastAPI App Metadata
@@ -18,80 +19,87 @@ app = FastAPI(
 )
 
 # -----------------------
-# MongoDB Atlas Connection
+# Initialize Database
 # -----------------------
-MONGO_URI = "mongodb+srv://skdb_user:trav90210@clusterproject.gqu1hes.mongodb.net/attendance_db?retryWrites=true&w=majority"
-client = MongoClient(MONGO_URI)
-
-db = client["attendance_db"]
-students_collection = db["students"]
-attendance_collection = db["attendance"]
+initialize_db()
 
 # -----------------------
-# Models
+# Pydantic Models
 # -----------------------
 class Student(BaseModel):
     name: str
     roll_no: str
     department: str
-    email: EmailStr   # ✅ Email validation
+    email: EmailStr
 
 class Attendance(BaseModel):
     student_id: str
     date: str
-    status: str  # "Present" / "Absent"
+    status: str  # "Present" or "Absent"
 
 # -----------------------
 # Routes
 # -----------------------
-
 @app.get("/", tags=["Home"])
 def home():
     return {"message": "Welcome to the Automated Student Attendance System 🚀"}
 
-# ✅ Add Student
+# Add Student
 @app.post("/students", tags=["Students"])
 def add_student(student: Student):
-    student_dict = student.dict()
-    students_collection.insert_one(student_dict)
-    return {"message": "✅ Student added successfully", "student": student_dict}
+    query = "INSERT INTO students (name, roll_no, department, email) VALUES (?, ?, ?, ?)"
+    execute_query(query, (student.name, student.roll_no, student.department, student.email))
+    return {"message": "✅ Student added successfully", "student": student.dict()}
 
-# 📋 Get All Students (with optional filters)
+# Get All Students (optional filters)
 @app.get("/students", tags=["Students"])
 def get_students(
     department: Optional[str] = Query(None, description="Filter by department"),
     roll_no: Optional[str] = Query(None, description="Search by roll number"),
 ):
-    query = {}
+    query = "SELECT * FROM students WHERE 1=1"
+    params = []
+
     if department:
-        query["department"] = department
+        query += " AND department = ?"
+        params.append(department)
     if roll_no:
-        query["roll_no"] = roll_no
+        query += " AND roll_no = ?"
+        params.append(roll_no)
 
-    students = list(students_collection.find(query, {"_id": 0}))
-    return {"students": students}
+    students = fetch_all(query, params)
+    return {"students": [dict(student) for student in students]}
 
-# 📝 Mark Attendance
+# Mark Attendance
 @app.post("/attendance", tags=["Attendance"])
 def mark_attendance(attendance: Attendance):
-    attendance_dict = attendance.dict()
-    attendance_collection.insert_one(attendance_dict)
-    return {"message": "✅ Attendance marked!", "attendance": attendance_dict}
+    # Check if student exists
+    student_check = fetch_all("SELECT * FROM students WHERE roll_no = ?", (attendance.student_id,))
+    if not student_check:
+        raise HTTPException(status_code=404, detail="Student not found")
 
-# 📊 Get Attendance Report (for a student)
+    query = "INSERT INTO attendance (student_id, date, status) VALUES (?, ?, ?)"
+    execute_query(query, (attendance.student_id, attendance.date, attendance.status))
+    return {"message": "✅ Attendance marked!", "attendance": attendance.dict()}
+
+# Get Attendance Report
 @app.get("/attendance/report/{roll_no}", tags=["Attendance"])
 def get_attendance_report(
     roll_no: str,
     start_date: Optional[str] = Query(None, description="Start date (YYYY-MM-DD)"),
     end_date: Optional[str] = Query(None, description="End date (YYYY-MM-DD)"),
 ):
-    query = {"student_id": roll_no}
-    if start_date and end_date:
-        query["date"] = {"$gte": start_date, "$lte": end_date}
+    query = "SELECT * FROM attendance WHERE student_id = ?"
+    params = [roll_no]
 
-    total = attendance_collection.count_documents(query)
-    present = attendance_collection.count_documents({**query, "status": "Present"})
-    
+    if start_date and end_date:
+        query += " AND date BETWEEN ? AND ?"
+        params.extend([start_date, end_date])
+
+    records = fetch_all(query, params)
+    total = len(records)
+    present = sum(1 for r in records if r["status"] == "Present")
+
     return {
         "student_id": roll_no,
         "total_days": total,
@@ -99,12 +107,13 @@ def get_attendance_report(
         "attendance_percentage": f"{(present/total*100) if total > 0 else 0:.2f}%"
     }
 
-# 📊 Get Daily Attendance Analytics
+# Daily Attendance Analytics
 @app.get("/attendance/daily", tags=["Analytics"])
 def daily_attendance(date: str = Query(..., description="Date (YYYY-MM-DD)")):
-    total = attendance_collection.count_documents({"date": date})
-    present = attendance_collection.count_documents({"date": date, "status": "Present"})
-    absent = attendance_collection.count_documents({"date": date, "status": "Absent"})
+    records = fetch_all("SELECT * FROM attendance WHERE date = ?", (date,))
+    total = len(records)
+    present = sum(1 for r in records if r["status"] == "Present")
+    absent = total - present
 
     return {
         "date": date,
@@ -113,3 +122,88 @@ def daily_attendance(date: str = Query(..., description="Date (YYYY-MM-DD)")):
         "absent": absent,
         "attendance_percentage": f"{(present/total*100) if total > 0 else 0:.2f}%"
     }
+
+# -----------------------
+# Optional: Test User Data
+# -----------------------
+if __name__ == "__main__":
+    # Insert a test user for local testing
+    execute_query("INSERT OR IGNORE INTO users (name, email) VALUES (?, ?)", 
+                  ("Amartya", "amartya@example.com"))
+
+    users = fetch_all("SELECT * FROM users")
+    for user in users:
+        print(dict(user))
+
+
+# add superadmin code in backend
+
+from fastapi import FastAPI
+from pydantic import BaseModel
+from typing import List
+
+app = FastAPI()
+
+# Temporary in-memory storage (replace with DB later)
+admins = []
+
+# Request body model
+class Admin(BaseModel):
+    email: str
+    password: str
+    college: str
+
+@app.post("/api/admins")
+def create_admin(admin: Admin):
+    if not admin.email or not admin.password or not admin.college:
+        return {"success": False, "message": "All fields are required"}
+
+    # Later you’ll save this in a database
+    admins.append(admin.dict())
+
+    return {"success": True, "message": "Admin created successfully!"}
+
+@app.get("/api/admins", response_model=List[Admin])
+def get_admins():
+    return admins
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# 👇 Add your Vercel frontend URL here
+origins = [
+    "https://attendance-frontend.vercel.app",  # your Vercel frontend URL
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/")
+def root():
+    return {"message": "Backend is working!"}
+
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+origins = [
+    "https://attendance-frontend-two-neon.vercel.app/",   # <- exact Vercel URL
+    "http://localhost:3000",              # optional, for local dev
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)

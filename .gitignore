@@ -1,0 +1,11 @@
+# Ignore Python cache
+__pycache__/
+
+# Ignore env files
+.env
+
+# Ignore SQLite databases
+*.db
+
+# Ignore render config if not needed
+render.yaml
