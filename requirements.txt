@@ -1,4 +1,5 @@
 fastapi
 uvicorn
-pydantic
-sqlite3-binary ; optional (SQLite comes built-in with Python, so not needed)
+sqlalchemy
+psycopg2-binary
+python-dotenv
