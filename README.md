@@ -30,3 +30,16 @@ Python backend architecture
 ✅ SQLite database integration
 ✅ Lightweight and easy to run
 ✅ RESTful API endpoints
+
+
+🛠 Tech Stack
+
+Backend: Python
+
+Framework: FastAPI
+
+Server: Uvicorn
+
+Database: SQLite
+
+Version Control: Git & GitHub
