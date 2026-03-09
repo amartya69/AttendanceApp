@@ -22,3 +22,11 @@ Database integration
 Server deployment
 
 Python backend architecture
+
+🚀 Features
+
+✅ Student attendance tracking
+✅ FastAPI backend API
+✅ SQLite database integration
+✅ Lightweight and easy to run
+✅ RESTful API endpoints
