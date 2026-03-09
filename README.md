@@ -43,3 +43,14 @@ Server: Uvicorn
 Database: SQLite
 
 Version Control: Git & GitHub
+
+📂 Project Structure
+AttendanceApp
+│
+├── AttendanceApp/        # Application modules
+├── main.py               # Main FastAPI application
+├── database.py           # Database connection and logic
+├── attendance.db         # SQLite database file
+├── requirements.txt      # Project dependencies
+├── .gitignore            # Ignored files
+└── README.md             # Project documentation
