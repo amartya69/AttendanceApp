@@ -77,3 +77,9 @@ source venv/bin/activate
 
 4️⃣ Install Dependencies
 pip install -r requirements.txt
+
+▶️ Running the Application
+
+Start the FastAPI server:
+
+uvicorn main:app --reload
