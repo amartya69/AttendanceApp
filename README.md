@@ -58,3 +58,6 @@ AttendanceApp
 ⚙️ Installation
 1️⃣ Clone the Repository
 git clone https://github.com/amartya69/AttendanceApp.git
+
+2️⃣ Navigate to Project Folder
+cd AttendanceApp
