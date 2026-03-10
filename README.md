@@ -61,3 +61,6 @@ git clone https://github.com/amartya69/AttendanceApp.git
 
 2️⃣ Navigate to Project Folder
 cd AttendanceApp
+
+3️⃣ Create Virtual Environment
+python -m venv venv
