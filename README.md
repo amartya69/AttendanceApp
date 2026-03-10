@@ -74,3 +74,6 @@ venv\Scripts\activate
 Mac / Linux
 
 source venv/bin/activate
+
+4️⃣ Install Dependencies
+pip install -r requirements.txt
