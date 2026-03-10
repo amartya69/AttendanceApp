@@ -54,3 +54,7 @@ AttendanceApp
 ├── requirements.txt      # Project dependencies
 ├── .gitignore            # Ignored files
 └── README.md             # Project documentation
+
+⚙️ Installation
+1️⃣ Clone the Repository
+git clone https://github.com/amartya69/AttendanceApp.git
