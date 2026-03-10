@@ -64,3 +64,9 @@ cd AttendanceApp
 
 3️⃣ Create Virtual Environment
 python -m venv venv
+
+Activate environment
+
+Windows
+
+venv\Scripts\activate
