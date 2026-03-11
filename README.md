@@ -106,3 +106,15 @@ Example response:
   "name": "John Doe",
   "status": "Present"
 }
+
+📈 Future Improvements
+
+Authentication system
+
+Web-based dashboard
+
+Analytics for attendance
+
+Student management system
+
+Cloud database support
