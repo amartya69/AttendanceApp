@@ -98,3 +98,11 @@ http://127.0.0.1:8000/docs
 Example request:
 
 GET /attendance
+
+Example response:
+
+{
+  "student_id": 1,
+  "name": "John Doe",
+  "status": "Present"
+}
