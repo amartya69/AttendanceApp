@@ -145,6 +145,16 @@ GET	/students	Get student list
 
 (Modify based on your actual endpoints)
 
+🗄 Database Schema
+
+Example attendance table structure:
+
+Column	Type
+id	INTEGER
+student_name	TEXT
+date	TEXT
+status	TEXT
+
 
 📡 Example API Endpoint
 
