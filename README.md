@@ -78,6 +78,17 @@ Database: SQLite
 
 Version Control: Git & GitHub
 
+🏗 Architecture
+Client Request
+      ↓
+FastAPI Routes (main.py)
+      ↓
+Database Layer (database.py)
+      ↓
+SQLite Database (attendance.db)
+      ↓
+API Response
+
 📂 Project Structure
 AttendanceApp
 │
