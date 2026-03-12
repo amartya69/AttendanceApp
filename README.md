@@ -118,3 +118,14 @@ Analytics for attendance
 Student management system
 
 Cloud database support
+
+
+👨‍💻 Author
+
+Amartya Prakash
+
+Backend Developer
+
+Interested in Python, Java, and API Development
+
+Building projects to improve software development skills
