@@ -137,6 +137,14 @@ Interactive API documentation:
 
 http://127.0.0.1:8000/docs
 
+📡 API Endpoints
+Method	Endpoint	Description
+GET	/attendance	Get attendance records
+POST	/attendance	Add attendance
+GET	/students	Get student list
+
+(Modify based on your actual endpoints)
+
 
 📡 Example API Endpoint
 
