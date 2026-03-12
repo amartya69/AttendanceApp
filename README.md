@@ -1,5 +1,39 @@
 📊 AttendanceApp – Smart Attendance Management System
 
+📑 Table of Contents
+
+Overview
+
+Features
+
+Tech Stack
+
+Architecture
+
+Project Structure
+
+Installation
+
+Running the Application
+
+API Endpoints
+
+Database Schema
+
+Example API Response
+
+Environment Variables
+
+Deployment
+
+Future Improvements
+
+Contributing
+
+Author
+
+License
+
 
 
 
