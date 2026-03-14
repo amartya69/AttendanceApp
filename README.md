@@ -176,6 +176,20 @@ If required, create a .env file:
 
 DATABASE_URL=sqlite:///attendance.db
 
+☁️ Deployment
+
+This project can be deployed using:
+
+Render
+
+Railway
+
+Heroku
+
+Docker
+
+Example Render command:
+
 📈 Future Improvements
 
 Authentication system
