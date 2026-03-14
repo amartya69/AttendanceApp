@@ -170,6 +170,12 @@ Example response:
   "status": "Present"
 }
 
+🔐 Environment Variables
+
+If required, create a .env file:
+
+DATABASE_URL=sqlite:///attendance.db
+
 📈 Future Improvements
 
 Authentication system
