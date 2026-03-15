@@ -207,6 +207,22 @@ Practice structuring a Python backend project
 
 Deploy a backend service on cloud platforms
 
+📊 System Workflow
+
+The workflow of the AttendanceApp is:
+
+User Request
+     ↓
+FastAPI Endpoint
+     ↓
+Business Logic
+     ↓
+Database Query
+     ↓
+SQLite Database
+     ↓
+Response Returned to Client
+
 📈 Future Improvements
 
 Authentication system
