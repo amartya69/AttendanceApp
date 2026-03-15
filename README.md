@@ -191,6 +191,22 @@ Docker
 Example Render command:
 uvicorn main:app --host 0.0.0.0 --port 10000
 
+🎯 Project Goals
+
+The main objective of this project is to build a simple backend system that demonstrates how attendance data can be stored and managed using REST APIs.
+
+Goals of the project:
+
+Understand backend development using FastAPI
+
+Learn database integration with SQLite
+
+Build and test RESTful APIs
+
+Practice structuring a Python backend project
+
+Deploy a backend service on cloud platforms
+
 📈 Future Improvements
 
 Authentication system
