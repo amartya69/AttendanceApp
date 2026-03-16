@@ -263,6 +263,19 @@ Use endpoint GET /attendance
 
 Send request and view response
 
+📁 Dependency Management
+
+All project dependencies are listed in the requirements.txt file.
+
+Example dependencies:
+
+fastapi
+uvicorn
+pydantic
+sqlite3
+
+Install them using:
+
 📈 Future Improvements
 
 Authentication system
