@@ -275,6 +275,7 @@ pydantic
 sqlite3
 
 Install them using:
+pip install -r requirements.txt
 
 📈 Future Improvements
 
