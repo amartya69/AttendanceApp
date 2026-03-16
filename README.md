@@ -253,6 +253,16 @@ Example using cURL:
 
 curl http://127.0.0.1:8000/attendance
 
+Example using Postman:
+
+Open Postman
+
+Create a new request
+
+Use endpoint GET /attendance
+
+Send request and view response
+
 📈 Future Improvements
 
 Authentication system
