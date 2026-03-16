@@ -239,6 +239,20 @@ http://127.0.0.1:8000/redoc
 
 These interfaces allow developers to test API endpoints directly from the browser.
 
+🧪 Testing the API
+
+You can test the API using the following tools:
+
+Swagger UI (built-in with FastAPI)
+
+Postman
+
+cURL
+
+Example using cURL:
+
+curl http://127.0.0.1:8000/attendance
+
 📈 Future Improvements
 
 Authentication system
