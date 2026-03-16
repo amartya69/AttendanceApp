@@ -223,6 +223,22 @@ SQLite Database
      ↓
 Response Returned to Client
 
+🔍 API Documentation
+
+FastAPI automatically generates interactive API documentation.
+
+You can access it here after running the server:
+
+Swagger UI
+
+http://127.0.0.1:8000/docs
+
+ReDoc Documentation
+
+http://127.0.0.1:8000/redoc
+
+These interfaces allow developers to test API endpoints directly from the browser.
+
 📈 Future Improvements
 
 Authentication system
