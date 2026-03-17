@@ -350,6 +350,7 @@ You can add GitHub stats badges:
 
 ![GitHub stars](https://img.shields.io/github/stars/amartya69/AttendanceApp)
 ![GitHub forks](https://img.shields.io/github/forks/amartya69/AttendanceApp)
+![GitHub repo size](https://img.shields.io/github/repo-size/amartya69/AttendanceApp)
 
 📈 Future Improvements
 
