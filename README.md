@@ -330,6 +330,20 @@ Pylance
 
 REST Client
 
+📚 Learning Outcomes
+
+Through this project, the following concepts were practiced:
+
+Backend API development
+
+REST architecture
+
+Database integration
+
+API documentation
+
+Deployment preparation
+
 📈 Future Improvements
 
 Authentication system
