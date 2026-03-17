@@ -322,6 +322,14 @@ Python 3.9+	Runtime
 Git	Version Control
 Postman	API Testing
 
+Recommended VS Code extensions:
+
+Python
+
+Pylance
+
+REST Client
+
 📈 Future Improvements
 
 Authentication system
