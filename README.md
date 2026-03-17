@@ -277,6 +277,26 @@ sqlite3
 Install them using:
 pip install -r requirements.txt
 
+🛡 Error Handling
+
+The application includes basic error handling for:
+
+Invalid API requests
+
+Database connection errors
+
+Missing parameters
+
+FastAPI automatically returns appropriate HTTP responses such as:
+
+200 OK
+
+400 Bad Request
+
+404 Not Found
+
+500 Internal Server Error
+
 📈 Future Improvements
 
 Authentication system
