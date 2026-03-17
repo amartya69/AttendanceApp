@@ -312,6 +312,16 @@ Docker containers
 Deployment command example:
 uvicorn main:app --host 0.0.0.0 --port 10000
 
+🔧 Development Setup
+
+Recommended development tools:
+
+Tool	Purpose
+VS Code	Code Editor
+Python 3.9+	Runtime
+Git	Version Control
+Postman	API Testing
+
 📈 Future Improvements
 
 Authentication system
