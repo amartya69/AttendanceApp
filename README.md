@@ -359,7 +359,10 @@ Your repo currently shows:
 "No description, website, or topics provided."
 
 Add this in About Section.
+Description
 FastAPI-based backend system for managing student attendance with SQLite database.
+Topics
+python fastapi backend attendance-system sqlite api rest
 
 Description
 
