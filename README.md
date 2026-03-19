@@ -352,6 +352,16 @@ You can add GitHub stats badges:
 ![GitHub forks](https://img.shields.io/github/forks/amartya69/AttendanceApp)
 ![GitHub repo size](https://img.shields.io/github/repo-size/amartya69/AttendanceApp)
 
+💡 Small Improvements You Should Make (Based on Screenshot)
+
+Your repo currently shows:
+
+"No description, website, or topics provided."
+
+Add this in About Section.
+
+Description
+
 📈 Future Improvements
 
 Authentication system
