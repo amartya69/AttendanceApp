@@ -359,6 +359,7 @@ Your repo currently shows:
 "No description, website, or topics provided."
 
 Add this in About Section.
+FastAPI-based backend system for managing student attendance with SQLite database.
 
 Description
 
