@@ -397,6 +397,20 @@ This project follows:
 - RESTful API design
 - Scalability for future improvements
 
+- 🔐 Security Considerations
+## 🔐 Security Considerations
+
+Currently implemented:
+
+- Input validation using FastAPI
+- Structured API responses
+
+Planned improvements:
+
+- Authentication (JWT)
+- Role-based access control
+- Secure database connections
+
 📈 Future Improvements
 
 Authentication system
