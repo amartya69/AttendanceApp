@@ -386,6 +386,17 @@ Example flow for marking attendance:
 
 This ensures smooth and structured data handling.
 
+🧱 Code Design Principles
+## 🧠 Design Principles
+
+This project follows:
+
+- Separation of concerns (API vs Database)
+- Modular structure
+- Clean and readable code
+- RESTful API design
+- Scalability for future improvements
+
 📈 Future Improvements
 
 Authentication system
