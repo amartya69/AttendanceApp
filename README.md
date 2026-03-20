@@ -371,7 +371,20 @@ This system can be used in:
 - 🎓 Colleges for student attendance tracking  
 - 🏫 Schools for daily attendance management  
 - 🏢 Small organizations for employee tracking  
-- 🧪 Learning backend development with real-world examples  
+- 🧪 Learning backend development with real-world examples
+
+- API Request Flow Example
+## 🔄 API Request Flow
+
+Example flow for marking attendance:
+
+1. Client sends POST request to `/attendance`
+2. FastAPI validates request data
+3. Business logic processes attendance
+4. Data is stored in SQLite database
+5. Response is returned with status
+
+This ensures smooth and structured data handling.
 
 📈 Future Improvements
 
