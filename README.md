@@ -445,6 +445,17 @@ This system can be extended with:
 - Limited UI (backend-only project)
 - SQLite not ideal for large-scale production
 
+- Roadmap
+## 🛣 Roadmap
+
+- [x] Basic FastAPI setup
+- [x] Database integration
+- [x] Attendance APIs
+- [ ] Authentication system
+- [ ] Admin dashboard
+- [ ] Cloud deployment
+- [ ] Frontend integration
+
 📈 Future Improvements
 
 Authentication system
