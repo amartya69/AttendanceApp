@@ -438,6 +438,13 @@ This system can be extended with:
 - Cloud databases (PostgreSQL, MongoDB)
 - Authentication services (Firebase/Auth0)
 
+- Known Issues
+## 🐞 Known Issues
+
+- No authentication implemented
+- Limited UI (backend-only project)
+- SQLite not ideal for large-scale production
+
 📈 Future Improvements
 
 Authentication system
