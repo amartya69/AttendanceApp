@@ -411,6 +411,13 @@ Planned improvements:
 - Role-based access control
 - Secure database connections
 
+- Performance Notes
+## ⚡ Performance
+
+- FastAPI provides high performance using ASGI
+- SQLite ensures lightweight and fast local storage
+- Suitable for small to medium-scale applications
+
 📈 Future Improvements
 
 Authentication system
