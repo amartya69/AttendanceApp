@@ -428,6 +428,16 @@ Future versions will include:
 - Frontend integration
 - Advanced analytics
 
+- Possible Integrations
+## 🔗 Integrations
+
+This system can be extended with:
+
+- React / Angular frontend
+- Mobile apps (Flutter / Android)
+- Cloud databases (PostgreSQL, MongoDB)
+- Authentication services (Firebase/Auth0)
+
 📈 Future Improvements
 
 Authentication system
