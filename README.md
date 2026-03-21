@@ -418,6 +418,16 @@ Planned improvements:
 - SQLite ensures lightweight and fast local storage
 - Suitable for small to medium-scale applications
 
+- Versioning
+## 🔢 Version
+
+Current Version: v1.0.0
+
+Future versions will include:
+- Authentication system
+- Frontend integration
+- Advanced analytics
+
 📈 Future Improvements
 
 Authentication system
