@@ -456,6 +456,13 @@ This system can be extended with:
 - [ ] Cloud deployment
 - [ ] Frontend integration
 
+Acknowledgements
+## 🙌 Acknowledgements
+
+- FastAPI documentation
+- Python community
+- Open-source contributors
+
 📈 Future Improvements
 
 Authentication system
