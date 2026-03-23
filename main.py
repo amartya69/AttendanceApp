@@ -25,6 +25,12 @@ class StatusEnum(str, Enum):
     Present = "Present"
     Absent = "Absent"
 
+Update model:
+
+class Attendance(BaseModel):
+    student_id: str
+    date: str
+    status: StatusEnum
         
 # -----------------------
 # Initialize Database
