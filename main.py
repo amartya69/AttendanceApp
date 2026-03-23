@@ -9,7 +9,8 @@ from database import initialize_db, execute_query, fetch_all
 # -----------------------
 app = FastAPI(
     title="Automated Student Attendance System",
-    description="""
+    version="1.0.0"
+)
     🚀 **Smart India Hackathon Project**  
     This system manages student attendance with real-time analytics.  
 
