@@ -18,7 +18,14 @@ app = FastAPI(
     """,
     version="1.0.0"
 )
+#Add enum 
+        from enum import Enum
 
+class StatusEnum(str, Enum):
+    Present = "Present"
+    Absent = "Absent"
+
+        
 # -----------------------
 # Initialize Database
 # -----------------------
