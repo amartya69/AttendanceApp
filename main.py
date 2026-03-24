@@ -31,6 +31,13 @@ class Attendance(BaseModel):
     student_id: str
     date: str
     status: StatusEnum
+
+from datetime import date
+
+class Attendance(BaseModel):
+    student_id: str
+    date: date
+    status: StatusEnum
         
 # -----------------------
 # Initialize Database
