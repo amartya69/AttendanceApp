@@ -87,6 +87,9 @@ def add_student(student: Student):
     execute_query(query, (student.name, student.roll_no, student.department, student.email))
     return {"message": "✅ Student added successfully", "student": student.dict()}
 
+if not student_check:
+    raise HTTPException(status_code=404, detail="Student not found")
+
 # Get All Students (optional filters)
 @app.get("/students", tags=["Students"])
 def get_students(
