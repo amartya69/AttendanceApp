@@ -121,6 +121,16 @@ def mark_attendance(attendance: Attendance):
     execute_query(query, (attendance.student_id, attendance.date, attendance.status))
     return {"message": "✅ Attendance marked!", "attendance": attendance.dict()}
 
+
+
+existing = fetch_all(
+    "SELECT * FROM attendance WHERE student_id=? AND date=?",
+    (attendance.student_id, attendance.date)
+)
+
+if existing:
+    raise HTTPException(status_code=400, detail="Attendance already marked")
+
 # Get Attendance Report
 @app.get("/attendance/report/{roll_no}", tags=["Attendance"])
 def get_attendance_report(
