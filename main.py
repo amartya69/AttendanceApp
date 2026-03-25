@@ -63,6 +63,10 @@ class Attendance(BaseModel):
     date: str
     status: str  # "Present" or "Absent"
 
+    existing = fetch_all("SELECT * FROM students WHERE roll_no = ?", (student.roll_no,))
+if existing:
+    raise HTTPException(status_code=400, detail="Student already exists")
+
 # -----------------------
 # Routes
 # -----------------------
