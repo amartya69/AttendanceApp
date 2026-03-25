@@ -74,6 +74,12 @@ if existing:
 def home():
     return {"message": "Welcome to the Automated Student Attendance System 🚀"}
 
+Improve Attendance Logic
+
+Currently:
+
+student_check = fetch_all("SELECT * FROM students WHERE roll_no = ?", ...)
+
 # Add Student
 @app.post("/students", tags=["Students"])
 def add_student(student: Student):
